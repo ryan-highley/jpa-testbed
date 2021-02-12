@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="jpa-testbed" transaction-type="JTA">
+      <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+      <jta-data-source>java:/jdbc/TestXADS</jta-data-source>
+      <!-- mapping-file>ormap.xml</mapping-file>
+      <jar-file>TestApp.jar</jar-file -->
+      <class>org.test.Test.model.ReceivedMsg</class>
+      <shared-cache-mode>NONE</shared-cache-mode>
+      <validation-mode>CALLBACK</validation-mode>
+      <properties>
+         <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
+         <!-- property name="hibernate.hbm2ddl.auto" value="create-drop"/ -->
+      </properties>
+   </persistence-unit>
+
+</persistence>
